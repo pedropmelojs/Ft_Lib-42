@@ -6,19 +6,19 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:47:09 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/09/30 14:51:09 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/01 11:19:17 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <bsd/string.h>
+
 void	ft_bzero(void *s, size_t n)
 {
-	int	i;
-
-	i = 0;
-	while (n != 0 && s[i] != '\0')
+	
+	while (n != 0)
 	{
-		s[i] = '\0';
-		i++;
+		*(unsigned char *)s = '\0';
+		s++;
 		n--;
 	}
 }

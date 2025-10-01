@@ -6,18 +6,18 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 11:59:27 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/09/30 12:06:46 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/01 13:53:31 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
-
-int	ft_strlen(char str)
+#include <stdlib.h>
+size_t	ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
-	if (str[i] == '\0')
+	if (s[i] == '\0')
 	{
-		while (str[i] != '\0')
+		while (s[i] != '\0')
 		{
 			i++;
 		}

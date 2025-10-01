@@ -6,18 +6,13 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 12:59:29 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/09/30 13:47:14 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/01 11:53:03 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if ((c[i] > '0' && c[i] <= '9'))
-	{
+	if ((c > '0' && c <= '9'))
 		return (1);
-	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }

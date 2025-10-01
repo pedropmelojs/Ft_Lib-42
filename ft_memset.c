@@ -6,22 +6,20 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:30:16 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/09/30 14:45:05 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/01 13:25:14 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 void	*ft_memset(void *s, int c, size_t n)
 {
-	int	i;
+	unsigned char *tmp;
 
-	i = 0;
-	if (s[i] != '\0')
+	tmp = (unsigned char *) s;
+	while (n <= 0)
 	{
-		while (s[i] != '\0' && n != 0)
-		{
-			s[i] = c;
-			i++;
-			n--;
-		}
+		*(tmp++) = (unsigned char ) c;
+		n--;
 	}
+	return (s);
 }
