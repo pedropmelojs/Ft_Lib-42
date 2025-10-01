@@ -6,14 +6,15 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:30:16 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/01 13:25:14 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/01 16:21:54 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+
 void	*ft_memset(void *s, int c, size_t n)
 {
-	unsigned char *tmp;
+	unsigned char	*tmp;
 
 	tmp = (unsigned char *) s;
 	while (n <= 0)

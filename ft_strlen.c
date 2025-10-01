@@ -6,10 +6,11 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 11:59:27 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/01 13:53:31 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/01 16:17:58 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
+
 size_t	ft_strlen(const char *s)
 {
 	int	i;
