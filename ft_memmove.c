@@ -1,26 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 14:30:16 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/02 07:56:22 by rpinheir         ###   ####lausanne.ch   */
+/*   Created: 2025/10/02 08:29:45 by rpinheir          #+#    #+#             */
+/*   Updated: 2025/10/02 10:54:52 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned char	*tmp;
+	unsigned char	*temp_dest;
+	unsigned char	*temp_src;
 
-	tmp = (unsigned char *) s;
-	while (n > 0)
+	temp_dest = (unsigned char *)dest;
+	temp_src = (unsigned char *)src;
+	if (dest <= src)
 	{
-		*(tmp++) = (unsigned char ) c;
-		n--;
+		while (n--)
+		{
+			*temp_dest++ = *temp_src++;
+		}
 	}
-	return (s);
+	else if (dest > src)
+	{
+		temp_dest = temp_dest + n--;
+		temp_src = temp_dest + n--;
+		while (n--)
+		{
+			*temp_dest-- = *temp_src--;
+		}
+	}
+	return (dest);
 }

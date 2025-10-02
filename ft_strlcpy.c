@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 15:18:49 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/01 16:21:24 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/02 08:27:27 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,12 @@
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
 	unsigned long	i;
+	unsigned long	tmp;
 
 	i = 0;
-	while (i < (size - 1) && src[i] != '\0')
+	if (size > 0)
+		tmp = size--;
+	while (i < size && src[i] != '\0')
 	{
 		dst[i] = src[i];
 		i++;

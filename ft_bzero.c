@@ -6,15 +6,15 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:47:09 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/01 16:00:24 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/02 08:26:42 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <bsd/string.h>
+#include <stdlib.h>
 
 void	ft_bzero(void *s, size_t n)
 {
-	while (n != 0)
+	while (n > 0)
 	{
 		*(unsigned char *)s = '\0';
 		s++;

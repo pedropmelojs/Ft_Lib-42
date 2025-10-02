@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/30 14:30:16 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/02 07:56:22 by rpinheir         ###   ####lausanne.ch   */
+/*   Created: 2025/10/02 11:55:38 by rpinheir          #+#    #+#             */
+/*   Updated: 2025/10/02 13:43:38 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	unsigned char	*tmp;
-
-	tmp = (unsigned char *) s;
-	while (n > 0)
+	while ((si1++ || s2++) || n--)
 	{
-		*(tmp++) = (unsigned char ) c;
-		n--;
+		if (s1 != s2)
+		{
+			return (s1 - s2);
+		}
 	}
-	return (s);
+	return (0);
 }
