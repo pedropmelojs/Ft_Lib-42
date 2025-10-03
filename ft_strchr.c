@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 11:15:48 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/02 11:35:25 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/03 11:56:23 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@ char	*strchr(const char *s, int c)
 {
 	while (s++)
 	{
-		if (c == s)
-			return (s);
+		if (*(const char *)s == (char)c)
+			return ((char *)s);
 	}
-	return (NULL);
+	return ((void *)0);
 }

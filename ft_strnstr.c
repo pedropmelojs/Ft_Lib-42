@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 13:36:22 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/02 14:51:30 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/03 11:21:17 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,17 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i;
-	size_t	j;
 	int		cmp;
 
 	cmp = ft_strncmp(big, little, ft_strlen(big));
-	if (!little)
-		return (big);
+	if (!*little)
+		return ((char *)big);
 	if (cmp)
 		return (NULL);
-	while (big++ || len--)
+	while (len--)
 	{
-		if (little == big)
-			return (big);
+		if (*little == *big)
+			return ((char *)big);
 	}
+	return ((char *)little);
 }
