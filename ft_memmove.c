@@ -19,24 +19,19 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	temp_dest = (unsigned char *)dest;
 	temp_src = (unsigned char *)src;
-	if (dest || src)
-	{	
-		if (dest <= src)
-		{
-			while (n--)
-			{
-				*temp_dest++ = *temp_src++;
-			}
-		}
-		else if (dest > src)
-		{
-			temp_dest = temp_dest + n - 1;
-			temp_src = temp_src + n - 1;
-			while (n--)
-			{
-				*temp_dest-- = *temp_src--;
-			}
-		}
+	if (!dest && !src)
+		return (NULL);
+	if (dest <= src)
+	{
+		while (n--)
+			*temp_dest++ = *temp_src++;
+	}
+	else
+	{
+		temp_dest = temp_dest + n - 1;
+		temp_src = temp_src + n - 1;
+		while (n--)
+			*temp_dest-- = *temp_src--;
 	}
 	return (dest);
 }

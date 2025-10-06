@@ -10,43 +10,42 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include <stdlib.h>
 #include "libft.h"
+
+static int	is_in_set(char c, char const *set)
+{
+	while (*set)
+	{
+		if (c == *set)
+			return (1);
+		set++;
+	}
+	return (0);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	size_t	start;
+	size_t	end;
+	size_t	i;
 	char	*ptr;
-	int	i;
-	int	j;
-	char	*tmp1;
-	int	k;
-	i = 0;
-	j = 0;
-	k = 0;
-	tmp1 = 0;
 
-	while (s1[i] != '\0')
-	{
-		while (set[j] != '\0')
-		{
-			if (s1[i] != set[j])
-			{
-				tmp1[k] = s1[i];
-				k++;
-			}
-			i++;
-			
-		}
-		j = 0;
-		
-	}
-	ptr = malloc(ft_strlen(tmp1));
-	if (ptr)
-		return (0);
+	if (!s1 || !set)
+		return (NULL);
+	start = 0;
+	while (s1[start] && is_in_set(s1[start], set))
+		start++;
+	end = ft_strlen(s1);
+	while (end > start && is_in_set(s1[end - 1], set))
+		end--;
+	ptr = malloc(end - start + 1);
+	if (!ptr)
+		return (NULL);
 	i = 0;
-	while (tmp1[i])
-	{
-		ptr[i] = tmp1[i];
-		i++;
-	}
+	while (start < end)
+		ptr[i++] = s1[start++];
+	ptr[i] = '\0';
 	return (ptr);
 }

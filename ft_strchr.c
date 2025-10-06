@@ -10,12 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*strchr(const char *s, int c)
+#include <stdlib.h>
+
+char	*ft_strchr(const char *s, int c)
 {
-	while (s++)
+	while (*s)
 	{
-		if (*(const char *)s == (char)c)
+		if (*s == (char)c)
 			return ((char *)s);
+		s++;
 	}
-	return ((void *)0);
+	if ((char)c == '\0')
+		return ((char *)s);
+	return (NULL);
 }
