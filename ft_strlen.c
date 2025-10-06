@@ -6,14 +6,14 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 11:59:27 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/02 08:16:07 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/06 09:05:07 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdlib.h>
 
 size_t	ft_strlen(const char *s)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != '\0')
