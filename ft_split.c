@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 09:07:32 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/07 15:31:13 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/10/07 16:22:58 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,29 +42,30 @@ static int	ft_findstart(char const *s, char c, int i)
 char	**ft_split(char const *s, char c)
 {
 	int		i;
-	int		start;
+	int		k;
 	int		count;
-	char	**ptr;
+	char	**arr;
 
-	ptr = 0;
-	i = 0;
+	arr = 0;
+	k = 0;
+	i = ft_findstart(s, c, 0);
 	count = 0;
-	start = ft_findstart(s, c, i);
-	ptr = malloc((ft_strlen(s) * ft_strlen(s)) * sizeof(char));
-	if (!ptr)
+	while (s[i] != '\0')
 	{
-		return (ptr);
-	}
-	while (s[i])
-	{
-		ptr[count][i] = s[i];
-		if (i == ft_findend(s, c, i))
+		arr[count][i] = s[i];
+		if (i == ft_findend(s, c, i) && ft_findend(s, c, i))
 		{
-			ptr[count][i + 1] = '\0';
-			start = ft_findend(s, c, i);
+			arr[count][i + 1] = '\0';
 			count++;
+			k = i;
+			i = ft_findstart(s, c, k);
 		}
 		i++;
 	}
-	return (ptr);
+	return (arr);
+}
+
+int	main(void)
+{
+	ft_split("hello !", 32);
 }
