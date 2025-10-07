@@ -14,7 +14,7 @@
 // le premier et dernier char de chaque string trouvee)
 #include <stdlib.h>
 
-int static	ft_findstart(char const *s, char c, int i)
+static int ft_findstart(char const *s, char c, int i)
 {
 	while (s[i])
 	{
@@ -25,7 +25,7 @@ int static	ft_findstart(char const *s, char c, int i)
 	return (0);
 }
 
-int static	ft_findend(char const *s, char c)
+static int	ft_findend(char const *s, char c)
 {
 	int	i;
 
@@ -57,7 +57,7 @@ char	**ft_split(char const *s, char c)
 		return ((void *)0);
 	while (s[i])
 	{
-		ptr[count][0] = s[i];
+		ptr[count][0] = s[start];
 		if (i == ft_findend(s, c))
 			i = ft_findend(s, c);
 		count++;
