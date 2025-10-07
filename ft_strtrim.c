@@ -6,13 +6,12 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 15:26:56 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/06 14:25:52 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/07 08:59:02 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 static int	is_in_set(char c, char const *set)
 {

@@ -6,13 +6,12 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 09:58:50 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/02 10:56:02 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/07 08:53:05 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
