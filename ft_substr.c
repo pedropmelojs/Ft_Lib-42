@@ -6,13 +6,12 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/03 14:25:21 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/03 14:47:52 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/07 08:59:20 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {

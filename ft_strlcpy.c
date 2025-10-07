@@ -6,12 +6,12 @@
 /*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 15:18:49 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/06 11:18:35 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/07 08:54:20 by rpinheir         ###   ####lausanne.ch   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
+#include <stdlib.h>
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -30,4 +30,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	dst[i] = '\0';
 	return (len);
 }
-
