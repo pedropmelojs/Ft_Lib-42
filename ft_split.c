@@ -3,30 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
+/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 09:07:32 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/07 16:22:58 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/10/07 23:58:41 by pedro            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // trouver les strings avec end et start comme index dans s
 // le premier et dernier char de chaque string trouvee)
-#include "libft.h"
 #include <stdlib.h>
-
-static int	ft_findend(char const *s, char c, int i)
-{
-	while (s[i] != c && s[i] != '\0')
-	{
-		if (s[i + 1] == c)
-		{
-			return (i);
-		}
-		i++;
-	}
-	return (0);
-}
 
 static int	ft_findstart(char const *s, char c, int i)
 {
@@ -39,33 +25,83 @@ static int	ft_findstart(char const *s, char c, int i)
 	return (0);
 }
 
-char	**ft_split(char const *s, char c)
+static int	ft_findend(char const *s, char c)
 {
-	int		i;
-	int		k;
-	int		count;
-	char	**arr;
+	int	i;
 
-	arr = 0;
-	k = 0;
-	i = ft_findstart(s, c, 0);
-	count = 0;
-	while (s[i] != '\0')
+	i = 0;
+	i = ft_findstart(s, c, i);
+	while (s[i] != c && s[i] != '\0')
 	{
-		arr[count][i] = s[i];
-		if (i == ft_findend(s, c, i) && ft_findend(s, c, i))
+		if (s[i + 1] == c)
 		{
-			arr[count][i + 1] = '\0';
-			count++;
-			k = i;
-			i = ft_findstart(s, c, k);
+			return (i);
 		}
 		i++;
 	}
-	return (arr);
+	return (i - 1);
 }
 
-int	main(void)
+static int	ft_count(const char *s, char c)
 {
-	ft_split("hello !", 32);
+	int	count;
+	int	inword;
+	int	i;
+
+	i = 0;
+	count = 0;
+	inword = 0;
+	while (s[i])
+	{
+		if (s[i] != c && !inword)
+		{
+			count++;
+			inword = 1;
+		}
+		else if (s[i] == c)
+		{
+			inword = 0;
+		}
+		i++;
+	}
+	return (count);
+}
+
+static void	ft_stringtoptr(const char *s, char c, char **ptr)
+{
+	int	i;
+	int	start;
+	int	count;
+	int	k;
+
+	i = 0;
+	k = 0;
+	count = 0;
+	start = ft_findstart(s, c, i);
+	while (s[i])
+	{
+		ptr[count][k] = s[start];
+		k++;
+		if (i == ft_findend(s, c))
+		{
+			k = 0;
+			start = ft_findstart(s, c, i + 1);
+			count++;
+		}
+		i++;
+	}
+}
+
+// TODO - Fonction pour compter la taille de chaque string pour le malloc
+char	**ft_split(char const *s, char c)
+{
+	char	**ptr;
+	int		count;
+
+	count = ft_count(s, c);
+	ptr = malloc(sizeof(*ptr) * count);
+	if (!ptr)
+		return ((void *)0);
+	ft_stringtoptr(s, c, ptr);
+	return (ptr);
 }
