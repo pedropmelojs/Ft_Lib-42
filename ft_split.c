@@ -65,8 +65,3 @@ char	**ft_split(char const *s, char c)
 	return (ptr);
 }
 
-void static	ft_crashguard(char const *s, char c)
-{
-	if (c == '\0')
-		return (0);
-}
