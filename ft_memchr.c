@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rpinheir <rpinheir@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/02 12:13:57 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/03 10:32:04 by rpinheir         ###   ####lausanne.ch   */
+/*   Updated: 2025/10/08 09:06:21 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

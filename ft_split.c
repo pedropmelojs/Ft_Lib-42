@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pedro <pedro@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 09:07:32 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/07 23:58:41 by pedro            ###   ########.fr       */
+/*   Updated: 2025/10/08 10:54:37 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// trouver les strings avec end et start comme index dans s
-// le premier et dernier char de chaque string trouvee)
+#include "libft.h"
 #include <stdlib.h>
 
 static int	ft_findstart(char const *s, char c, int i)
@@ -76,8 +75,8 @@ static void	ft_stringtoptr(const char *s, char c, char **ptr)
 
 	i = 0;
 	k = 0;
-	count = 0;
 	start = ft_findstart(s, c, i);
+	count = ft_count(s, c);
 	while (s[i])
 	{
 		ptr[count][k] = s[start];
@@ -99,9 +98,14 @@ char	**ft_split(char const *s, char c)
 	int		count;
 
 	count = ft_count(s, c);
-	ptr = malloc(sizeof(*ptr) * count);
+	ptr = ft_calloc(count + 1, sizeof(char *));
 	if (!ptr)
 		return ((void *)0);
 	ft_stringtoptr(s, c, ptr);
 	return (ptr);
+}
+
+int	main(void)
+{
+	ft_split("hello", 32);
 }
