@@ -6,30 +6,18 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 09:07:32 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/08 11:21:45 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/10/08 11:47:28 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static int	ft_findstart(char const *s, char c, int i)
-{
-	while (s[i])
-	{
-		if (s[i] != c)
-			return (i);
-		i++;
-	}
-	return (0);
-}
-
 static int	ft_findend(char const *s, char c)
 {
 	int	i;
 
-	i = 0;
-	i = ft_findstart(s, c, i);
+	i = ft_strchr(s, c) - s;
 	while (s[i] != c && s[i] != '\0')
 	{
 		if (s[i + 1] == c)
@@ -41,14 +29,12 @@ static int	ft_findend(char const *s, char c)
 	return (i - 1);
 }
 
-static int	ft_count(const char *s, char c)
+static int	ft_count(const char *s, char c, int count)
 {
-	int	count;
 	int	inword;
 	int	i;
 
 	i = 0;
-	count = 0;
 	inword = 0;
 	while (s[i])
 	{
@@ -69,14 +55,14 @@ static int	ft_count(const char *s, char c)
 static void	ft_stringtoptr(const char *s, char c, char **ptr)
 {
 	int	i;
-	int	start;
 	int	index;
 	int	k;
+	int	start;
 
 	i = 0;
 	k = 0;
-	start = ft_findstart(s, c, i);
 	index = 0;
+	start = ft_strchr(s, c) - s;
 	while (s[i])
 	{
 		ptr[index][k] = s[start];
@@ -84,7 +70,7 @@ static void	ft_stringtoptr(const char *s, char c, char **ptr)
 		if (i == ft_findend(s, c))
 		{
 			k = 0;
-			start = ft_findstart(s, c, i + 1);
+			start = ft_strchr(s, c) - s;
 			index++;
 		}
 		i++;
@@ -97,7 +83,7 @@ char	**ft_split(char const *s, char c)
 	char	**ptr;
 	int		count;
 
-	count = ft_count(s, c);
+	count = ft_count(s, c, 0);
 	ptr = ft_calloc(count + 1, sizeof(char *));
 	if (!ptr)
 		return ((void *)0);
