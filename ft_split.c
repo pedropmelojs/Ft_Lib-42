@@ -6,7 +6,7 @@
 /*   By: rpinheir <rpinheir@student.42lausanne.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/07 09:07:32 by rpinheir          #+#    #+#             */
-/*   Updated: 2025/10/08 10:54:37 by rpinheir         ###   ########.fr       */
+/*   Updated: 2025/10/08 11:21:45 by rpinheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,22 +70,22 @@ static void	ft_stringtoptr(const char *s, char c, char **ptr)
 {
 	int	i;
 	int	start;
-	int	count;
+	int	index;
 	int	k;
 
 	i = 0;
 	k = 0;
 	start = ft_findstart(s, c, i);
-	count = ft_count(s, c);
+	index = 0;
 	while (s[i])
 	{
-		ptr[count][k] = s[start];
+		ptr[index][k] = s[start];
 		k++;
 		if (i == ft_findend(s, c))
 		{
 			k = 0;
 			start = ft_findstart(s, c, i + 1);
-			count++;
+			index++;
 		}
 		i++;
 	}
@@ -103,9 +103,4 @@ char	**ft_split(char const *s, char c)
 		return ((void *)0);
 	ft_stringtoptr(s, c, ptr);
 	return (ptr);
-}
-
-int	main(void)
-{
-	ft_split("hello", 32);
 }
