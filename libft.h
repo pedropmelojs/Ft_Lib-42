@@ -16,6 +16,7 @@
 # include <stdlib.h>
 
 int		ft_isalpha(int c);
+char	*ft_itoa(int chiffre);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
